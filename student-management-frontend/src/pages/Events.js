@@ -77,12 +77,6 @@ export default function Events() {
     }
   };
 
-  const handleEdit = (event) => {
-    setFormData(event);
-    setEditingId(event.event_id);
-    setShowModal(true);
-  };
-
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this event?")) {
       try {
@@ -168,12 +162,6 @@ export default function Events() {
                   <td>{event.location || "N/A"}</td>
                   <td>{event.faculty_name || "N/A"}</td>
                   <td>
-                    <button
-                      className="btn btn-warning btn-sm"
-                      onClick={() => handleEdit(event)}
-                    >
-                      ✏️ Edit
-                    </button>
                     <button
                       className="btn btn-danger btn-sm"
                       onClick={() => handleDelete(event.event_id)}

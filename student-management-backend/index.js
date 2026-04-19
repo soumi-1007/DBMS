@@ -237,11 +237,7 @@ app.get('/dashboard', (req, res) => {
     (SELECT COUNT(*) FROM students) as total_students,
     (SELECT COUNT(*) FROM events) as total_events,
     (SELECT COUNT(*) FROM participation) as total_participation,
-    (SELECT COUNT(*) FROM faculty) as total_faculty,
-    (SELECT COUNT(*) FROM events e LEFT JOIN activities a ON e.activity_id = a.activity_id WHERE a.activity_type = 'Co') as curricular_events,
-    (SELECT COUNT(*) FROM events e LEFT JOIN activities a ON e.activity_id = a.activity_id WHERE a.activity_type = 'Extra') as extra_curricular_events,
-    (SELECT COUNT(*) FROM participation p LEFT JOIN events e ON p.event_id = e.event_id LEFT JOIN activities a ON e.activity_id = a.activity_id WHERE a.activity_type = 'Co') as curricular_participation,
-    (SELECT COUNT(*) FROM participation p LEFT JOIN events e ON p.event_id = e.event_id LEFT JOIN activities a ON e.activity_id = a.activity_id WHERE a.activity_type = 'Extra') as extra_curricular_participation`,
+    (SELECT COUNT(*) FROM faculty) as total_faculty`,
     (err, results) => {
       if (err) return res.status(500).json({ error: err.message });
       res.json(results[0]);

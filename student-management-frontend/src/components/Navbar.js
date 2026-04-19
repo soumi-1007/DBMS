@@ -6,8 +6,8 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-brand">
-          <h1>🎓 SCAM System</h1>
-          <p>Student Curricular & Extra-Curricular Management</p>
+          <h1>🎓 Activity Management</h1>
+          <p>Student Activity Tracking System</p>
         </div>
         
         <ul className="navbar-menu">

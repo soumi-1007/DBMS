@@ -49,12 +49,6 @@ export default function Faculty() {
     }
   };
 
-  const handleEdit = (fac) => {
-    setFormData(fac);
-    setEditingId(fac.faculty_id);
-    setShowModal(true);
-  };
-
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this faculty member?")) {
       try {
@@ -105,12 +99,6 @@ export default function Faculty() {
                 <td><strong>{fac.faculty_name}</strong></td>
                 <td>{fac.dept_name || `Dept ${fac.dept_id}`}</td>
                 <td>
-                  <button
-                    className="btn btn-warning btn-sm"
-                    onClick={() => handleEdit(fac)}
-                  >
-                    ✏️ Edit
-                  </button>
                   <button
                     className="btn btn-danger btn-sm"
                     onClick={() => handleDelete(fac.faculty_id)}

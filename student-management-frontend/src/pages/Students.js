@@ -51,12 +51,6 @@ export default function Students() {
     }
   };
 
-  const handleEdit = (student) => {
-    setFormData(student);
-    setEditingId(student.student_id);
-    setShowModal(true);
-  };
-
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this student?")) {
       try {
@@ -111,12 +105,6 @@ export default function Students() {
                 <td>{s.dept_name || "N/A"}</td>
                 <td>{s.year}</td>
                 <td>
-                  <button
-                    className="btn btn-warning btn-sm"
-                    onClick={() => handleEdit(s)}
-                  >
-                    ✏️ Edit
-                  </button>
                   <button
                     className="btn btn-danger btn-sm"
                     onClick={() => handleDelete(s.student_id)}

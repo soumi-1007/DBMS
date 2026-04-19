@@ -7,11 +7,7 @@ export default function Dashboard() {
     total_students: 0,
     total_events: 0,
     total_participation: 0,
-    total_faculty: 0,
-    curricular_events: 0,
-    extra_curricular_events: 0,
-    curricular_participation: 0,
-    extra_curricular_participation: 0
+    total_faculty: 0
   });
 
   const loadStats = async () => {
@@ -45,9 +41,6 @@ export default function Dashboard() {
       <div className="dashboard-header">
         <h1>📊 Dashboard</h1>
         <p>Student Curricular & Extra-Curricular Management System</p>
-        <button className="btn btn-primary" onClick={loadStats} style={{ marginLeft: "auto" }}>
-          🔄 Refresh
-        </button>
       </div>
 
       <div className="stats-grid">
@@ -55,27 +48,6 @@ export default function Dashboard() {
         <StatCard icon="🎯" title="Total Events" value={stats.total_events} color="green" />
         <StatCard icon="✋" title="Participations" value={stats.total_participation} color="orange" />
         <StatCard icon="👨‍🏫" title="Faculty Members" value={stats.total_faculty} color="purple" />
-      </div>
-
-      <div className="stats-grid">
-        <StatCard icon="📚" title="Curricular Events" value={stats.curricular_events} color="blue" />
-        <StatCard icon="🎭" title="Extra-Curricular Events" value={stats.extra_curricular_events} color="green" />
-        <StatCard icon="📚" title="Curricular Participations" value={stats.curricular_participation} color="orange" />
-        <StatCard icon="🎭" title="Extra-Curricular Participations" value={stats.extra_curricular_participation} color="purple" />
-      </div>
-
-      <div className="dashboard-sections">
-        <div className="section">
-          <h2>📚 Curricular Activities</h2>
-          <p>Manage academic events, workshops, and seminars organized by departments.</p>
-          <a href="/activities?type=curricular" className="btn btn-primary">View Curricular Events</a>
-        </div>
-
-        <div className="section">
-          <h2>🎭 Extra-Curricular Activities</h2>
-          <p>Track student participation in clubs, sports, cultural events, and competitions.</p>
-          <a href="/activities?type=extra-curricular" className="btn btn-secondary">View Extra-Curricular</a>
-        </div>
       </div>
 
       <div className="quick-actions">

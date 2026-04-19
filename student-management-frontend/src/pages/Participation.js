@@ -76,12 +76,6 @@ export default function Participation() {
     }
   };
 
-  const handleEdit = (participation) => {
-    setFormData(participation);
-    setEditingId(participation.participation_id);
-    setShowModal(true);
-  };
-
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to remove this participation?")) {
       try {
@@ -175,12 +169,6 @@ export default function Participation() {
                   </span>
                 </td>
                 <td>
-                  <button
-                    className="btn btn-warning btn-sm"
-                    onClick={() => handleEdit(p)}
-                  >
-                    ✏️ Edit
-                  </button>
                   <button
                     className="btn btn-danger btn-sm"
                     onClick={() => handleDelete(p.participation_id)}
