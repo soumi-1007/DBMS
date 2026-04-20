@@ -28,7 +28,6 @@ export default function Dashboard() {
 
   const StatCard = ({ icon, title, value, color }) => (
     <div className={`stat-card stat-${color}`}>
-      <div className="stat-icon">{icon}</div>
       <div className="stat-content">
         <h3>{title}</h3>
         <p className="stat-value">{value}</p>
@@ -44,10 +43,10 @@ export default function Dashboard() {
       </div>
 
       <div className="stats-grid">
-        <StatCard icon="👨‍🎓" title="Total Students" value={stats.total_students} color="blue" />
-        <StatCard icon="🎯" title="Total Events" value={stats.total_events} color="green" />
-        <StatCard icon="✋" title="Participations" value={stats.total_participation} color="orange" />
-        <StatCard icon="👨‍🏫" title="Faculty Members" value={stats.total_faculty} color="purple" />
+        <StatCard title="Total Students" value={stats.total_students} color="blue" />
+        <StatCard title="Total Events" value={stats.total_events} color="green" />
+        <StatCard title="Participations" value={stats.total_participation} color="orange" />
+        <StatCard title="Faculty Members" value={stats.total_faculty} color="purple" />
       </div>
 
       <div className="quick-actions">

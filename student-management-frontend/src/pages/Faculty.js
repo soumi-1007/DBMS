@@ -78,7 +78,7 @@ export default function Faculty() {
       <div className="table-container">
         <div className="table-header">
           <h2>👨‍🏫 Faculty Management</h2>
-          <button className="btn btn-primary" onClick={handleAddNew}>
+          <button className="btn btn-white" onClick={handleAddNew}>
             ➕ Add Faculty
           </button>
         </div>

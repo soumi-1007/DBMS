@@ -1,13 +1,13 @@
 /* ========== GLOBAL STYLES ========== */
 
 :root {
-  --primary-color: #667eea;
-  --secondary-color: #764ba2;
-  --success-color: #388e3c;
-  --danger-color: #d32f2f;
-  --warning-color: #f57c00;
-  --light-bg: #f5f7fa;
-  --border-color: #e0e0e0;
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --success-color: #27ae60;
+  --danger-color: #e74c3c;
+  --warning-color: #f39c12;
+  --light-bg: #ecf0f1;
+  --border-color: #bdc3c7;
 }
 
 * {
@@ -39,7 +39,7 @@ body {
 }
 
 .table-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   color: white;
   padding: 20px;
   display: flex;
@@ -62,7 +62,7 @@ th {
   padding: 15px;
   text-align: left;
   font-weight: 600;
-  color: #333;
+  color: #000000;
   border-bottom: 2px solid var(--border-color);
   font-size: 0.9em;
   text-transform: uppercase;
@@ -113,7 +113,7 @@ tbody tr:hover {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
 }
 
 /* ========== MODAL STYLES ========== */
@@ -187,13 +187,13 @@ tbody tr:hover {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   color: white;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 5px 15px rgba(44, 62, 80, 0.4);
 }
 
 .btn-success {
@@ -203,7 +203,7 @@ tbody tr:hover {
 
 .btn-success:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(56, 142, 60, 0.4);
+  box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
 }
 
 .btn-danger {
@@ -213,7 +213,7 @@ tbody tr:hover {
 
 .btn-danger:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4);
+  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
 }
 
 .btn-warning {
@@ -223,7 +223,19 @@ tbody tr:hover {
 
 .btn-warning:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(245, 124, 0, 0.4);
+  box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+}
+
+.btn-white {
+  background: white;
+  color: #2c3e50;
+  border: 2px solid #2c3e50;
+}
+
+.btn-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(44, 62, 80, 0.2);
+  background: #f8f9fa;
 }
 
 .btn-sm {

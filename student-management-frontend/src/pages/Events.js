@@ -127,7 +127,7 @@ export default function Events() {
       <div className="table-container">
         <div className="table-header">
           <h2>📅 Events Management</h2>
-          <button className="btn btn-primary" onClick={handleAddNew}>
+          <button className="btn btn-white" onClick={handleAddNew}>
             ➕ Create Event
           </button>
         </div>

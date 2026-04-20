@@ -36,9 +36,9 @@ export default function Achievements() {
           <thead>
             <tr>
               <th>Achievement ID</th>
-              <th>Participation</th>
+              <th>Participant Name</th>
+              <th>Event</th>
               <th>Prize/Recognition</th>
-              <th>Details</th>
             </tr>
           </thead>
           <tbody>
@@ -46,9 +46,9 @@ export default function Achievements() {
               data.map((a) => (
                 <tr key={a.achievement_id || a.participation_id}>
                   <td>{a.achievement_id || a.participation_id}</td>
-                  <td>{a.participation_id}</td>
+                  <td><strong>{a.participant_name || "Unknown"}</strong></td>
+                  <td>{a.event_name || "N/A"}</td>
                   <td><strong>{a.prize || "N/A"}</strong></td>
-                  <td>{a.details || "No additional details"}</td>
                 </tr>
               ))
             ) : (

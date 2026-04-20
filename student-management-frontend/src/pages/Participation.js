@@ -126,7 +126,7 @@ export default function Participation() {
       <div className="table-container">
         <div className="table-header">
           <h2>👥 Participation Management</h2>
-          <button className="btn btn-primary" onClick={handleAddNew}>
+          <button className="btn btn-white" onClick={handleAddNew}>
             ➕ Register Student
           </button>
         </div>

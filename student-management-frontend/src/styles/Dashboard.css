@@ -4,7 +4,7 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   min-height: 100vh;
 }
 
@@ -39,11 +39,14 @@
   border-radius: 15px;
   padding: 30px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  gap: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
+  text-align: center;
 }
 
 .stat-card:hover {
@@ -52,23 +55,23 @@
 }
 
 .stat-card.stat-blue .stat-icon {
-  background: #e3f2fd;
-  color: #1976d2;
+  background: #d6eaf8;
+  color: #2c3e50;
 }
 
 .stat-card.stat-green .stat-icon {
-  background: #e8f5e9;
-  color: #388e3c;
+  background: #d5f4e6;
+  color: #27ae60;
 }
 
 .stat-card.stat-orange .stat-icon {
-  background: #fff3e0;
-  color: #f57c00;
+  background: #fdebd0;
+  color: #f39c12;
 }
 
 .stat-card.stat-purple .stat-icon {
-  background: #f3e5f5;
-  color: #7b1fa2;
+  background: #ebdef0;
+  color: #8e44ad;
 }
 
 .stat-icon {
@@ -81,9 +84,13 @@
   border-radius: 12px;
 }
 
+.stat-content {
+  width: 100%;
+}
+
 .stat-content h3 {
   margin: 0;
-  color: #666;
+  color: #2c3e50;
   font-size: 0.95em;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -94,7 +101,7 @@
   margin: 10px 0 0 0;
   font-size: 2.5em;
   font-weight: bold;
-  color: #333;
+  color: #2c3e50;
 }
 
 .dashboard-sections {
@@ -143,23 +150,23 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   color: white;
 }
 
 .btn-primary:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 25px rgba(44, 62, 80, 0.4);
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
   color: white;
 }
 
 .btn-secondary:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(245, 87, 108, 0.4);
+  box-shadow: 0 10px 25px rgba(44, 62, 80, 0.4);
 }
 
 .quick-actions {
@@ -182,7 +189,7 @@
 }
 
 .action-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   color: white;
   padding: 20px;
   border-radius: 12px;
@@ -199,7 +206,7 @@
 
 .action-btn:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 12px 30px rgba(44, 62, 80, 0.4);
 }
 
 .action-icon {

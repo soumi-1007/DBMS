@@ -217,7 +217,11 @@ app.delete('/participation/:id', (req, res) => {
 
 // ========== ACHIEVEMENTS ==========
 app.get('/achievements', (req, res) => {
-  db.query('SELECT * FROM achievements', (err, results) => {
+  db.query(`SELECT a.*, s.name as participant_name, e.event_name
+    FROM achievements a
+    LEFT JOIN participation p ON a.participation_id = p.participation_id
+    LEFT JOIN students s ON p.student_id = s.student_id
+    LEFT JOIN events e ON p.event_id = e.event_id`, (err, results) => {
     if (err) return res.status(500).json({ error: err.message });
     res.json(results);
   });
