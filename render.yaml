@@ -1,0 +1,25 @@
+# Render deployment configuration
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: student-activity-api
+    runtime: node
+    rootDir: student-management-backend
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_SSL
+        value: "true"
+      - key: FRONTEND_URL
+        sync: false

@@ -3,18 +3,24 @@ const mysql = require('mysql2');
 const cors = require('cors');
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 app.use(express.json());
 
 // MySQL connection
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root', // Update with your MySQL username
-  password: 'Mohana@143', // Update with your MySQL password
-  database: 'student_activity_db' // Update with your database name
+  host: process.env.DB_HOST || 'localhost',
+  port: process.env.DB_PORT || 3306,
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || 'Mohana@143',
+  database: process.env.DB_NAME || 'student_activity_db',
+  ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: true } : undefined
 });
 
 db.connect((err) => {
