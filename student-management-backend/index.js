@@ -1,7 +1,8 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
-
+const fs = require('fs');
+const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -20,7 +21,8 @@ const db = mysql.createConnection({
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASSWORD || 'Mohana@143',
   database: process.env.DB_NAME || 'student_activity_db',
-  ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: true } : undefined
+  ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : undefined,
+  multipleStatements: true
 });
 
 db.connect((err) => {
@@ -32,6 +34,22 @@ db.connect((err) => {
 });
 
 // Routes
+
+// ========== DB SETUP ==========
+app.get('/setup-db', (req, res) => {
+  try {
+    let sql = fs.readFileSync(path.join(__dirname, 'db_export.sql'), 'utf8');
+    sql = sql.replace(/DEFINER=`root`@`localhost`/g, 'DEFINER=CURRENT_USER');
+    db.query(sql, (err, results) => {
+      if (err) {
+        return res.status(500).json({ error: err.message, code: err.code });
+      }
+      res.json({ message: 'Database imported successfully!' });
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 // ========== STUDENTS ==========
 app.get('/students', (req, res) => {
