@@ -49,7 +49,11 @@ export default function RegistrationLog() {
                   <td>{l.registration_id || i + 1}</td>
                   <td>{l.student_id}</td>
                   <td>{l.event_id}</td>
-                  <td>{new Date(l.registration_date).toLocaleDateString()}</td>
+                  <td>{l.registration_date ? new Date(l.registration_date).toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  }) : "N/A"}</td>
                   <td>
                     <span style={{
                       background: "#c8e6c9",

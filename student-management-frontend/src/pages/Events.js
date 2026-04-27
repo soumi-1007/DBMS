@@ -158,7 +158,11 @@ export default function Events() {
                       {event.activity_type_display === "Curricular" ? "📚 Curricular" : "🎭 Extra-Curricular"}
                     </span>
                   </td>
-                  <td>{event.date ? new Date(event.date).toLocaleDateString() : "N/A"}</td>
+                  <td>{event.date ? new Date(event.date).toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  }) : "N/A"}</td>
                   <td>{event.location || "N/A"}</td>
                   <td>{event.faculty_name || "N/A"}</td>
                   <td>
